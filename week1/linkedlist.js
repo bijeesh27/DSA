@@ -115,6 +115,30 @@ class LinkedList {
     return removedNode.value;
   }
 
+  // Remove value - delete a specific element from the list by its value
+
+  remove(value) {
+    if (this.head == null) {
+      return null;
+    } else if (this.head.value === value) {
+      this.head = this.head.next;
+      this.size--;
+      return value;
+    } else {
+      let prev = this.head;
+      while (prev.next && prev.next.value !== value) {
+        prev = prev.next;
+      }
+      if (prev.next) {
+        let removedNode = prev.next;
+        prev.next = removedNode.next;
+        this.size--;
+        return value;
+      }
+      return null;
+    }
+  }
+
   // Print - display the contents of the list
 
   print() {
@@ -146,7 +170,8 @@ list.append(9);
 list.insert(777, 4);
 
 list.print();
-// list.reverse();
+list.reverse();
 console.log(list.search(2));
 console.log(list.removeFrom(1));
+list.remove(777);
 list.print();
