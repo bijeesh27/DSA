@@ -10,14 +10,14 @@ let users=[
 ]
 
 
-function xyz(users){
-    let newArr=users.reduce((acc,curr)=>{
-        if(curr.age<30&&curr.isActive==true){
-            acc.push(curr.email)
-        }
-        return acc
-    },[])
-    return newArr
+function xyz(users) {
+  let newArr = users.reduce((acc, curr) => {
+    if (curr.age < 30 && curr.isActive == true) {
+      acc.push(curr.email);
+    }
+    return acc;
+  }, []);
+  return newArr;
 }
 
 console.log(xyz(users))
