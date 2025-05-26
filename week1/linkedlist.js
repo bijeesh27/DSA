@@ -13,7 +13,15 @@ class LinkedList{
         this.head=null;
     }
 
-    
+    prepend(value){
+        let node = new Node(value)
+        if(this.head==null){
+            this.head=node
+        }else{
+            node.next=this.head
+            this.head=node
+        }
+    }
 
 
     print(){
@@ -23,7 +31,7 @@ class LinkedList{
             let curr=this.head;
             let listValues=''
             while(curr){
-                listValues+=`${curr.value}->`
+                listValues+=`${curr.value} -> `
                 curr=curr.next
             }
             console.log(listValues)
@@ -34,5 +42,10 @@ class LinkedList{
 
 
 let list=new LinkedList()
+
+list.prepend(4)
+list.prepend(2)
+list.prepend(6)
+list.prepend(3)
 
 list.print()
