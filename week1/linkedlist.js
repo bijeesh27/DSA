@@ -75,6 +75,25 @@ class LinkedList {
     this.head = prev;
   }
 
+  // Search - find an element in the list
+
+  search(value) {
+    if (this.head == null) {
+      return -1;
+    } else {
+      let i = 0;
+      let curr = this.head;
+      while (curr) {
+        if (curr.value === value) {
+          return i;
+        }
+        curr = curr.next;
+        i++;
+      }
+      return -1;
+    }
+  }
+
   // Print - display the contents of the list
 
   print() {
@@ -107,4 +126,5 @@ list.insert(777, 4);
 
 list.print();
 list.reverse();
+console.log(list.search(2));
 list.print();
