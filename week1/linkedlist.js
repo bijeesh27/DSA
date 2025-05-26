@@ -13,6 +13,8 @@ class LinkedList{
         this.head=null;
     }
 
+    
+
 
     print(){
         if(this.head==null){
