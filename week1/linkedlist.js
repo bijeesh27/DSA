@@ -11,6 +11,7 @@ class Node{
 class LinkedList{
     constructor(){
         this.head=null;
+        this.size=0
     }
 
  // Prepend - adding an element to the START of the list
@@ -23,6 +24,7 @@ class LinkedList{
             node.next=this.head
             this.head=node
         }
+        this.size++
     }
 
 // Append - adding an element to the END of the list
@@ -37,6 +39,28 @@ class LinkedList{
                 prev=prev.next
             }
             prev.next=node
+        }
+        this.size++
+    }
+
+
+// Insert - add an element at a specific position in the list
+
+    insert(value,index){
+        
+        if(index < 0 || index > this.size){
+            return null
+        }else if(index===0){
+            this.prepend(value)
+        }else{
+            let node =new Node(value)
+            let prev=this.head
+            for(let i=0;i<index-1;i++){
+                prev=prev.next
+            }
+            node.next=prev.next
+            prev.next=node
+            this.size++
         }
     }
 
@@ -70,5 +94,6 @@ list.append(2)
 list.append(5)
 list.append(8)
 list.append(9)
+list.insert(777,4)
 
 list.print()
