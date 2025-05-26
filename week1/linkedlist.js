@@ -94,6 +94,27 @@ class LinkedList {
     }
   }
 
+  // Remove from index - delete an element at a specific position in the list
+
+  removeFrom(index) {
+    let removedNode;
+    if (index < 0 || index > this.size) {
+      return null;
+    } else if (index === 0) {
+      removedNode = this.head;
+      this.head = this.head.next;
+    } else {
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+      removedNode = prev.next;
+      prev.next = removedNode.next;
+    }
+    this.size--;
+    return removedNode.value;
+  }
+
   // Print - display the contents of the list
 
   print() {
@@ -125,6 +146,7 @@ list.append(9);
 list.insert(777, 4);
 
 list.print();
-list.reverse();
+// list.reverse();
 console.log(list.search(2));
+console.log(list.removeFrom(1));
 list.print();
