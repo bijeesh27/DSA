@@ -23,3 +23,19 @@ function xyz(users) {
 console.log(xyz(users))
 
 
+// Function to check if an array is in ascending order
+
+let arr=[1,2,3,5]
+
+function isAssending(arr){
+    let prev=arr[0]
+    for(let i=1;i<arr.length;i++){
+        if(arr[i]<prev){
+            return false
+        }
+        prev=arr[i]
+    }
+    return true
+}
+
+console.log(isAssending(arr));
