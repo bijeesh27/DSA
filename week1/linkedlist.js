@@ -146,7 +146,7 @@ class LinkedList {
       console.log("The List Is Empty");
     } else {
       let curr = this.head;
-      let listValues = "";
+      let listValues = "";s
       while (curr) {
         listValues += `${curr.value} -> `;
         curr = curr.next;

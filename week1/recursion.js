@@ -39,7 +39,7 @@ console.log("Reverse a String : " + reverseString("hello"));
 //Array Reverse Recursively
 
 function xyz(arr) {
-  let newArr = [];
+  
   if (arr.length == 0) return [];
   return xyz(arr.slice(1)).concat(arr[0]);
 }
@@ -126,4 +126,18 @@ function gcd(a, b) {
   return gcd(b, a % b);
 }
 
+
 console.log(gcd(48, 18));
+
+let arr = [1, 2, 3, 4, 5, 6];
+function arrayReverse(arr, start, end) {
+    if (start >= end) {
+        return arr
+    }
+
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+
+    return arrayReverse(arr, start + 1, end - 1);
+}
+
+console.log(arrayReverse(arr, 0, arr.length - 1));
