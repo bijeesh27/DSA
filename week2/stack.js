@@ -1,3 +1,6 @@
+
+// stack Implementation
+
 class Stack {
   constructor() {
     this.items = [];
@@ -43,3 +46,5 @@ stack.push(20);
 stack.push(30);
 
 stack.printStack();
+
+
