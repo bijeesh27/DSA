@@ -55,3 +55,8 @@ console.log(queue.size());
 queue.printQueue();
 queue.clear();
 queue.printQueue();
+
+
+//Queue Using Stack
+
+
