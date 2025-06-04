@@ -56,7 +56,43 @@ queue.printQueue();
 queue.clear();
 queue.printQueue();
 
-
 //Queue Using Stack
 
+class QueueUsingStacks {
+  constructor() {
+    this.stack1 = [];
+    this.stack2 = [];
+  }
+  enqueue(value) {
+    this.stack1.push(value);
+  }
+  dequeue() {
+    if (this.isEmpty()) {
+      return "Queue is empty";
+    }
 
+    if (this.stack2.length === 0) {
+      while (this.stack1.length > 0) {
+        this.stack2.push(this.stack1.pop());
+      }
+    }
+    return this.stack2.pop();
+  }
+  front() {
+    if (this.isEmpty()) {
+      return "Queue is empty";
+    }
+
+    if (this.stack2.length === 0) {
+      while (this.stack1.length > 0) {
+        this.stack2.push(this.stack1.pop());
+      }
+    }
+    return this.stack2[this.stack2.length - 1];
+  }
+
+  isEmpty() {
+    return this.stack1.length === 0 && this.stack2.length === 0;
+  }
+}
+const queueusingstacks = new QueueUsingStacks();
