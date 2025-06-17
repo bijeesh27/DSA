@@ -86,7 +86,7 @@ function merge(leftArr, rightArr) {
     if (leftArr[0] <= rightArr[0]) {
       sortedArr.push(leftArr.shift());
     } else {
-      sortedArr.push(rightArr.shift());o
+      sortedArr.push(rightArr.shift());
     }
   }
   return [...sortedArr, ...leftArr, ...rightArr];
