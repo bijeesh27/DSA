@@ -65,6 +65,8 @@ class Trie {
   }
 }
 
+
+
 let t = new Trie();
 
 t.insert("apple");
